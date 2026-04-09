@@ -6,6 +6,10 @@ const serverPort=process.env.SERVER_PORT | 3000;
 const CategoryRoute=require('./route/CategoryRoute');
 const CountryRoute = require('./route/CountryRoute');
 const DiscountRoute = require('./route/DiscountRoute');
+const ProductRoute = require('./route/ProductRoute');
+const CartRoute = require('./route/CartRoute');
+const BookmarkRoute = require('./route/BookmarkRoute');
+const ReviewRoute = require('./route/ReviewRoute');
 const bodyParser=require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -26,3 +30,7 @@ app.get('/test-api', (req,resp)=>{
 app.use('/api/v1/categories',CategoryRoute);
 app.use('/api/v1/countries',CountryRoute);
 app.use('/api/v1/discounts',DiscountRoute);
+app.use('/api/v1/products', ProductRoute);
+app.use('/api/v1/carts', CartRoute);
+app.use('/api/v1/bookmarks', BookmarkRoute);
+app.use('/api/v1/reviews', ReviewRoute);
